@@ -60,7 +60,7 @@
     </defs>
   </svg>
 
-  <a class="skip-link" href="#articles">Bỏ qua, tới danh sách bài viết</a>
+  <a class="skip-link" href="#home-view">Bỏ qua, tới nội dung chính</a>
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" id="top">
@@ -90,7 +90,7 @@
   </header>
 
   <!-- ===== BANNER ===== -->
-  <section class="banner" id="banner" aria-labelledby="banner-title">
+  <section class="banner" id="banner" hidden aria-labelledby="banner-title">
     <div class="container">
       <h1 id="banner-title">Kiến thức lặn biển cho mọi người</h1>
       <p class="banner-sub">Các hệ thống tín hiệu liên lạc khi lặn – ngắn gọn, dễ hiểu, dễ áp dụng.</p>
@@ -129,8 +129,52 @@
     </div>
   </section>
 
+  <!-- ===== TRANG CHỦ: 4 ô danh mục lớn (2x2) ===== -->
+  <section class="home-view container page" id="home-view" aria-labelledby="home-title">
+    <h2 class="home-title" id="home-title">Chọn một bộ ký hiệu để bắt đầu</h2>
+    <div class="home-grid">
+      <button type="button" class="home-tile" data-home-category="Bộ ký hiệu tay">
+        <span class="home-tile-icon" aria-hidden="true">🤚</span>
+        <span class="home-tile-title">Bộ ký hiệu tay</span>
+        <span class="home-tile-count"></span>
+      </button>
+      <button type="button" class="home-tile" data-home-category="Bộ ký hiệu dây">
+        <!-- Cuộn dây vẽ bằng SVG: emoji 🪢 không có trong font của nhiều máy (hiện thành ô vuông) -->
+        <span class="home-tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="32" cy="34" rx="22" ry="14" stroke="#7a4b1f" stroke-width="9" />
+            <ellipse cx="32" cy="34" rx="22" ry="14" stroke="#e3b36f" stroke-width="6" />
+            <ellipse cx="32" cy="34" rx="11" ry="6" stroke="#7a4b1f" stroke-width="8" />
+            <ellipse cx="32" cy="34" rx="11" ry="6" stroke="#e3b36f" stroke-width="5" />
+            <path d="M52 30 C59 22 55 12 44 10" stroke="#7a4b1f" stroke-width="8" />
+            <path d="M52 30 C59 22 55 12 44 10" stroke="#e3b36f" stroke-width="5" />
+            <path d="M30 17.5 L34 22.5 M18 20 L22 25 M42 20 L46 25 M30 45.5 L34 50.5 M18 43.5 L22 48.5 M42 43.5 L46 48.5 M7 32 L13 36 M51 32 L57 36"
+              stroke="#7a4b1f" stroke-width="1.6" />
+          </svg>
+        </span>
+        <span class="home-tile-title">Bộ ký hiệu dây</span>
+        <span class="home-tile-count"></span>
+      </button>
+      <button type="button" class="home-tile" data-home-category="Bộ ký hiệu ánh sáng">
+        <span class="home-tile-icon" aria-hidden="true">🔦</span>
+        <span class="home-tile-title">Bộ ký hiệu ánh sáng</span>
+        <span class="home-tile-count"></span>
+      </button>
+      <button type="button" class="home-tile" data-home-category="Vỗ vai và bóp tay">
+        <span class="home-tile-icon" aria-hidden="true">🤝</span>
+        <span class="home-tile-title">Vỗ vai và bóp tay</span>
+        <span class="home-tile-count"></span>
+      </button>
+    </div>
+  </section>
+
   <!-- ===== BODY ===== -->
-  <main id="articles" class="container page">
+  <main id="articles" class="container page" hidden>
+    <a class="back-link" href="#top">
+      <svg class="icon icon-sm" aria-hidden="true">
+        <use href="#i-chevron" />
+      </svg> Về trang chủ
+    </a>
     <div class="layout">
       <!-- Tổng số bài viết: nằm ở cột trái, phía trên khối Danh mục (trên mobile nằm đầu danh sách) -->
       <div class="result-head">
@@ -220,7 +264,7 @@
     <a class="back-link" href="#top">
       <svg class="icon icon-sm" aria-hidden="true">
         <use href="#i-chevron" />
-      </svg> Quay lại danh sách bài viết
+      </svg> Về trang chủ
     </a>
     <h1 class="survey-title" id="survey-title"></h1>
     <div class="survey-body" id="survey-body"></div>
@@ -294,6 +338,16 @@
       </svg>
     </button>
     <div class="modal-layout" id="modal-body"></div>
+  </dialog>
+
+  <!-- Popup xem ảnh đầy đủ (mở khi bấm vào ảnh trong popup chi tiết bài viết) -->
+  <dialog class="modal modal-lightbox" id="image-modal" aria-label="Xem ảnh đầy đủ">
+    <button class="modal-close" id="image-modal-close" type="button" aria-label="Đóng">
+      <svg class="icon" aria-hidden="true">
+        <use href="#i-x" />
+      </svg>
+    </button>
+    <img id="image-modal-img" alt="">
   </dialog>
 
   <noscript>

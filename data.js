@@ -89,7 +89,7 @@ const SURVEY_INFO = {
 const POSTS = [
   {
     "id": 1,
-    "title": "Nhìn tôi / Chú ý tín hiệu",
+    "title": "T01. Nhìn tôi / Chú ý tín hiệu",
     "excerpt": "Yêu cầu chuyển sự chú ý đến thông tin tiếp theo.",
     "content": [
       "Thực hiện: Đưa ngón trỏ và ngón giữa về phía kính mặt nạ, rồi chỉ người hoặc vị trí cần quan sát.",
@@ -100,7 +100,7 @@ const POSTS = [
     "categories": ["Thiết lập liên lạc và xác nhận"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-08",
+    "date": "2026-09-01",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#2a8fbd"],
@@ -108,7 +108,7 @@ const POSTS = [
   },
   {
     "id": 2,
-    "title": "Tôi ổn / Bạn có ổn không?",
+    "title": "T02. Tôi ổn / Bạn có ổn không?",
     "excerpt": "Hỏi tình trạng hoặc báo tình trạng ổn.",
     "content": [
       "Thực hiện: Ngón cái chạm ngón trỏ thành vòng tròn; đưa bàn tay vào vùng nhìn thấy của đồng đội.",
@@ -119,7 +119,7 @@ const POSTS = [
     "categories": ["Thiết lập liên lạc và xác nhận"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-21",
+    "date": "2026-09-01",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -127,7 +127,7 @@ const POSTS = [
   },
   {
     "id": 3,
-    "title": "Tôi ổn — biến thể khi đeo găng tay dày",
+    "title": "T03. Tôi ổn — biến thể khi đeo găng tay dày",
     "excerpt": "Hỏi tình trạng hoặc báo tình trạng ổn.",
     "content": [
       "Thực hiện: Chụm đầu ngón cái và ngón trỏ tạo thành vòng tròn; ba ngón còn lại để co tự nhiên khi găng tay dày gây khó duỗi. Đưa bàn tay vào vùng nhìn thấy của đồng đội.",
@@ -138,7 +138,7 @@ const POSTS = [
     "categories": ["Thiết lập liên lạc và xác nhận"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-03",
+    "date": "2026-09-02",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -146,7 +146,7 @@ const POSTS = [
   },
   {
     "id": 4,
-    "title": "Tôi không hiểu",
+    "title": "T04. Tôi không hiểu",
     "excerpt": "Báo chưa hiểu thông tin vừa nhận.",
     "content": [
       "Thực hiện: Mở hai bàn tay sang hai bên, lòng bàn tay hướng lên; thể hiện rõ yêu cầu làm rõ.",
@@ -157,7 +157,7 @@ const POSTS = [
     "categories": ["Thiết lập liên lạc và xác nhận"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-03",
+    "date": "2026-09-05",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -165,7 +165,7 @@ const POSTS = [
   },
   {
     "id": 5,
-    "title": "Có sự cố / Có vấn đề",
+    "title": "T05. Có sự cố / Có vấn đề",
     "excerpt": "Thông báo có tình trạng bất thường cần chú ý.",
     "content": [
       "Thực hiện: Duỗi phẳng bàn tay, lòng bàn tay úp, các ngón hơi tách; nghiêng bàn tay luân phiên sang hai bên quanh trục cẳng tay, sau đó chỉ vị trí có vấn đề.",
@@ -176,7 +176,7 @@ const POSTS = [
     "categories": ["Thiết lập liên lạc và xác nhận"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-12",
+    "date": "2026-09-06",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -184,7 +184,7 @@ const POSTS = [
   },
   {
     "id": 6,
-    "title": "Dừng lại — một tay",
+    "title": "T06. Dừng lại — một tay",
     "excerpt": "Dừng hoạt động đang thực hiện để nhận thông tin tiếp theo.",
     "content": [
       "Thực hiện: Đưa bàn tay thẳng đứng, các ngón hướng lên, lòng bàn tay hướng về người nhận.",
@@ -195,7 +195,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-07",
+    "date": "2026-09-06",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#1592d4"],
@@ -203,7 +203,7 @@ const POSTS = [
   },
   {
     "id": 7,
-    "title": "Chậm lại / Bình tĩnh",
+    "title": "T07. Chậm lại / Bình tĩnh",
     "excerpt": "Yêu cầu giảm nhịp thao tác hoặc tốc độ di chuyển.",
     "content": [
       "Thực hiện: Duỗi bàn tay, lòng bàn tay úp; chuyển chậm lên xuống với biên độ nhỏ.",
@@ -214,7 +214,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-15",
+    "date": "2026-09-06",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#2a8fbd"],
@@ -222,7 +222,7 @@ const POSTS = [
   },
   {
     "id": 8,
-    "title": "Đi lên",
+    "title": "T08. Đi lên",
     "excerpt": "Thông báo hoặc yêu cầu đi lên theo phương án lặn.",
     "content": [
       "Thực hiện: Nắm bàn tay, ngón cái hướng lên; có thể chuyển động bàn tay theo hướng lên.",
@@ -233,7 +233,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-09",
+    "date": "2026-09-07",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -241,7 +241,7 @@ const POSTS = [
   },
   {
     "id": 9,
-    "title": "Đi xuống",
+    "title": "T09. Đi xuống",
     "excerpt": "Thông báo hoặc yêu cầu đi xuống.",
     "content": [
       "Thực hiện: Nắm bàn tay, ngón cái hướng xuống; thể hiện rõ chiều chuyển động.",
@@ -252,7 +252,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-10",
+    "date": "2026-09-07",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -260,7 +260,7 @@ const POSTS = [
   },
   {
     "id": 10,
-    "title": "Giữ độ sâu",
+    "title": "T10. Giữ độ sâu",
     "excerpt": "Duy trì mức độ sâu hiện tại.",
     "content": [
       "Thực hiện: Đặt bàn tay nằm ngang, lòng bàn tay úp; chuyển nhẹ theo phương ngang.",
@@ -271,7 +271,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-06",
+    "date": "2026-09-08",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -279,7 +279,7 @@ const POSTS = [
   },
   {
     "id": 11,
-    "title": "Di chuyển theo hướng chỉ",
+    "title": "T11. Di chuyển theo hướng chỉ",
     "excerpt": "Chỉ hướng di chuyển tiếp theo.",
     "content": [
       "Thực hiện: Nắm bàn tay, duỗi ngón trỏ theo hướng cần di chuyển trong mặt phẳng ngang.",
@@ -290,7 +290,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-27",
+    "date": "2026-09-08",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -298,7 +298,7 @@ const POSTS = [
   },
   {
     "id": 12,
-    "title": "Quay lại",
+    "title": "T12. Quay lại",
     "excerpt": "Yêu cầu đổi hướng quay về theo kế hoạch.",
     "content": [
       "Thực hiện: Đưa ngón trỏ hướng lên và xoay bàn tay thành vòng tròn nhỏ.",
@@ -309,7 +309,7 @@ const POSTS = [
     "categories": ["Điều khiển di chuyển"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-07",
+    "date": "2026-09-08",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#1592d4"],
@@ -317,7 +317,7 @@ const POSTS = [
   },
   {
     "id": 13,
-    "title": "Lại gần tôi",
+    "title": "T13. Lại gần tôi",
     "excerpt": "Yêu cầu rút ngắn khoảng cách giữa hai người.",
     "content": [
       "Thực hiện: Đưa bàn tay về phía trước rồi vẫy các ngón hoặc bàn tay về phía thân mình.",
@@ -328,7 +328,7 @@ const POSTS = [
     "categories": ["Phối hợp với đồng đội"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-06",
+    "date": "2026-09-10",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#2a8fbd"],
@@ -336,7 +336,7 @@ const POSTS = [
   },
   {
     "id": 14,
-    "title": "Ghép đôi / Đi theo cặp",
+    "title": "T14. Ghép đôi / Đi theo cặp",
     "excerpt": "Yêu cầu trở lại đội hình theo cặp.",
     "content": [
       "Thực hiện: Duỗi ngón trỏ của hai bàn tay và đưa hai ngón lại gần nhau.",
@@ -347,7 +347,7 @@ const POSTS = [
     "categories": ["Phối hợp với đồng đội"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-02",
+    "date": "2026-09-14",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -355,7 +355,7 @@ const POSTS = [
   },
   {
     "id": 15,
-    "title": "Giãn cách một chút",
+    "title": "T15. Giãn cách một chút",
     "excerpt": "Yêu cầu tăng nhẹ khoảng cách giữa hai thợ lặn.",
     "content": [
       "Thực hiện: Duỗi ngón trỏ của hai bàn tay, hướng xuống dưới và tách hai ngón ra một khoảng nhỏ.",
@@ -366,7 +366,7 @@ const POSTS = [
     "categories": ["Phối hợp với đồng đội"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-08",
+    "date": "2026-09-15",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -374,7 +374,7 @@ const POSTS = [
   },
   {
     "id": 16,
-    "title": "Nắm tay nhau",
+    "title": "T16. Nắm tay nhau",
     "excerpt": "Yêu cầu thiết lập tiếp xúc bàn tay giữa hai người.",
     "content": [
       "Thực hiện: Đan hoặc nắm hai bàn tay trước ngực để minh họa yêu cầu giữ liên hệ.",
@@ -385,7 +385,7 @@ const POSTS = [
     "categories": ["Phối hợp với đồng đội"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-29",
+    "date": "2026-09-16",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -393,7 +393,7 @@ const POSTS = [
   },
   {
     "id": 17,
-    "title": "Kiểm tra thời gian",
+    "title": "T17. Kiểm tra thời gian",
     "excerpt": "Đề nghị đồng đội chú ý hoặc kiểm tra thời gian lặn.",
     "content": [
       "Thực hiện: Dùng ngón trỏ của một bàn tay chỉ vào đồng hồ hoặc máy tính lặn ở cổ tay còn lại.",
@@ -404,7 +404,7 @@ const POSTS = [
     "categories": ["Theo dõi thời gian và điều hành nhiệm vụ"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-16",
+    "date": "2026-09-17",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -412,7 +412,7 @@ const POSTS = [
   },
   {
     "id": 18,
-    "title": "Tạm dừng / Chờ — chữ T",
+    "title": "T18. Tạm dừng / Chờ — chữ T",
     "excerpt": "Trong bộ ký hiệu đề xuất này, yêu cầu tạm dừng thao tác hoặc di chuyển để chờ trao đổi, chỉ dẫn tiếp theo.",
     "content": [
       "Thực hiện: Đặt một bàn tay nằm ngang, lòng bàn tay hướng xuống; bàn tay còn lại dựng đứng, các ngón duỗi khép, đầu ngón chạm phía dưới bàn tay nằm ngang để tạo hình chữ T.",
@@ -423,7 +423,7 @@ const POSTS = [
     "categories": ["Theo dõi thời gian và điều hành nhiệm vụ"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-01",
+    "date": "2026-09-19",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#1592d4"],
@@ -431,7 +431,7 @@ const POSTS = [
   },
   {
     "id": 19,
-    "title": "Dừng 3 phút",
+    "title": "  Dừng 3 phút",
     "excerpt": "Yêu cầu thực hiện khoảng dừng kéo dài 3 phút.",
     "content": [
       "Thực hiện: Đặt một bàn tay nằm ngang, lòng bàn tay hướng xuống; bàn tay còn lại duỗi ba ngón trỏ, giữa và áp út hướng lên, chạm vào phía dưới bàn tay nằm ngang.",
@@ -442,7 +442,7 @@ const POSTS = [
     "categories": ["Theo dõi thời gian và điều hành nhiệm vụ"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-10",
+    "date": "2026-09-19",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#2a8fbd"],
@@ -450,7 +450,7 @@ const POSTS = [
   },
   {
     "id": 20,
-    "title": "Kết thúc nhiệm vụ",
+    "title": "T20. Kết thúc nhiệm vụ",
     "excerpt": "Yêu cầu kết thúc nhiệm vụ dưới nước và triển khai thu hồi tổ lặn theo phương án.",
     "content": [
       "Thực hiện: Đưa hai cẳng tay bắt chéo hình chữ X trước ngực, sau đó ra tín hiệu ngón cái hướng lên để biểu thị kết thúc lượt lặn.",
@@ -461,7 +461,7 @@ const POSTS = [
     "categories": ["Theo dõi thời gian và điều hành nhiệm vụ"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-06",
+    "date": "2026-09-19",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -469,7 +469,7 @@ const POSTS = [
   },
   {
     "id": 21,
-    "title": "Thuyền / Vị trí thuyền",
+    "title": "T21. Thuyền / Vị trí thuyền",
     "excerpt": "Chỉ phương tiện trên mặt nước trong trao đổi tiếp theo.",
     "content": [
       "Thực hiện: Khép hai bàn tay thành hình lòng thuyền trước ngực.",
@@ -480,7 +480,7 @@ const POSTS = [
     "categories": ["Theo dõi thời gian và điều hành nhiệm vụ"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-08",
+    "date": "2026-09-20",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -488,7 +488,7 @@ const POSTS = [
   },
   {
     "id": 22,
-    "title": "Còn bao nhiêu khí?",
+    "title": "T22. Còn bao nhiêu khí?",
     "excerpt": "Yêu cầu kiểm tra và báo lượng khí còn lại.",
     "content": [
       "Thực hiện: Dùng động tác hỏi lượng khí trong hình; khi cần chỉ trực tiếp đồng hồ áp suất để làm rõ câu hỏi.",
@@ -499,7 +499,7 @@ const POSTS = [
     "categories": ["Kiểm tra và thông báo áp suất khí"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-19",
+    "date": "2026-09-21",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -507,7 +507,7 @@ const POSTS = [
   },
   {
     "id": 23,
-    "title": "Áp suất khí còn 50 bar",
+    "title": "T23. Áp suất khí còn 50 bar",
     "excerpt": "Thông báo áp suất khí còn 50 bar theo quy ước của mẫu.",
     "content": [
       "Thực hiện: Nắm một bàn tay, ngón cái gập bên ngoài các ngón còn lại; đưa nắm tay lên để đồng đội nhìn rõ.",
@@ -518,7 +518,7 @@ const POSTS = [
     "categories": ["Kiểm tra và thông báo áp suất khí"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-07",
+    "date": "2026-09-21",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -526,7 +526,7 @@ const POSTS = [
   },
   {
     "id": 24,
-    "title": "Áp suất khí còn 100 bar — lặp tín hiệu 50 bar",
+    "title": "T24. Áp suất khí còn 100 bar — lặp tín hiệu 50 bar",
     "excerpt": "Thông báo áp suất khí còn 100 bar: 50 + 50.",
     "content": [
       "Thực hiện: Phát tín hiệu nắm tay biểu thị 50 bar hai lần liên tiếp, có khoảng ngắt rõ giữa hai lần.",
@@ -537,7 +537,7 @@ const POSTS = [
     "categories": ["Kiểm tra và thông báo áp suất khí"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-29",
+    "date": "2026-09-22",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#1592d4"],
@@ -545,7 +545,7 @@ const POSTS = [
   },
   {
     "id": 25,
-    "title": "Áp suất khí còn 70 bar",
+    "title": "T25. Áp suất khí còn 70 bar",
     "excerpt": "Thông báo áp suất khí còn 70 bar: 50 + 20.",
     "content": [
       "Thực hiện: Một tay nắm lại biểu thị 50 bar; tay còn lại duỗi ngón trỏ và ngón giữa biểu thị 20 bar.",
@@ -556,7 +556,7 @@ const POSTS = [
     "categories": ["Kiểm tra và thông báo áp suất khí"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-01",
+    "date": "2026-09-23",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#2a8fbd"],
@@ -564,7 +564,7 @@ const POSTS = [
   },
   {
     "id": 26,
-    "title": "Áp suất khí còn 130 bar",
+    "title": "T26. Áp suất khí còn 130 bar",
     "excerpt": "Thông báo áp suất khí còn 130 bar: 50 + 50 + 30.",
     "content": [
       "Thực hiện: Phát tín hiệu nắm tay biểu thị 50 bar hai lần; kết hợp tay còn lại duỗi ba ngón trỏ, giữa và áp út để biểu thị 30 bar.",
@@ -575,7 +575,7 @@ const POSTS = [
     "categories": ["Kiểm tra và thông báo áp suất khí"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-14",
+    "date": "2026-09-23",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -583,7 +583,7 @@ const POSTS = [
   },
   {
     "id": 27,
-    "title": "Cân bằng áp suất tai",
+    "title": "T27. Cân bằng áp suất tai",
     "excerpt": "Nhắc hoặc yêu cầu đồng đội cân bằng áp suất tai theo quy ước đã thống nhất.",
     "content": [
       "Thực hiện: Đưa một tay lên, dùng ngón cái và ngón trỏ bóp nhẹ phần mũi mềm của mặt nạ, mô phỏng động tác cân bằng áp suất tai.",
@@ -594,7 +594,7 @@ const POSTS = [
     "categories": ["Tình trạng cơ thể và cân bằng áp suất"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-02",
+    "date": "2026-09-24",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -602,7 +602,7 @@ const POSTS = [
   },
   {
     "id": 28,
-    "title": "Có vấn đề ở tai / Không cân bằng được áp suất",
+    "title": "T28. Có vấn đề ở tai / Không cân bằng được áp suất",
     "excerpt": "Báo khó chịu hoặc khó cân bằng áp suất tai.",
     "content": [
       "Thực hiện: Dùng ngón trỏ chỉ vào vùng tai.",
@@ -613,7 +613,7 @@ const POSTS = [
     "categories": ["Tình trạng cơ thể và cân bằng áp suất"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-14",
+    "date": "2026-09-24",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -621,7 +621,7 @@ const POSTS = [
   },
   {
     "id": 29,
-    "title": "Tôi bị lạnh",
+    "title": "T29. Tôi bị lạnh",
     "excerpt": "Thông báo cảm giác lạnh ảnh hưởng đến người lặn.",
     "content": [
       "Thực hiện: Khoanh hai tay trước ngực; bàn tay ôm phần cánh tay đối diện.",
@@ -632,7 +632,7 @@ const POSTS = [
     "categories": ["Tình trạng cơ thể và cân bằng áp suất"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-21",
+    "date": "2026-09-25",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -640,7 +640,7 @@ const POSTS = [
   },
   {
     "id": 30,
-    "title": "Nguy hiểm theo hướng chỉ",
+    "title": "T30. Nguy hiểm theo hướng chỉ",
     "excerpt": "Cảnh báo nguy hiểm theo hướng đã chỉ.",
     "content": [
       "Thực hiện: Nắm bàn tay và duỗi cánh tay về phía có nguy cơ.",
@@ -651,7 +651,7 @@ const POSTS = [
     "categories": ["Cảnh báo nguy hiểm và sự cố khí thở"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-14",
+    "date": "2026-09-26",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#1592d4"],
@@ -659,7 +659,7 @@ const POSTS = [
   },
   {
     "id": 31,
-    "title": "Hết khí",
+    "title": "T31. Hết khí",
     "excerpt": "Báo không còn nguồn khí thở sử dụng được.",
     "content": [
       "Thực hiện: Bàn tay duỗi, lòng bàn tay úp, đưa ngang phía trước cổ theo động tác cắt.",
@@ -678,7 +678,7 @@ const POSTS = [
   },
   {
     "id": 32,
-    "title": "Yêu cầu chia sẻ khí",
+    "title": "T32. Yêu cầu chia sẻ khí",
     "excerpt": "Yêu cầu hỗ trợ nguồn khí thở.",
     "content": [
       "Thực hiện: Đưa các ngón tay chỉ về vùng bộ điều áp hoặc miệng trong tầm nhìn đồng đội.",
@@ -689,7 +689,7 @@ const POSTS = [
     "categories": ["Cảnh báo nguy hiểm và sự cố khí thở"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-17",
+    "date": "2026-09-27",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -697,7 +697,7 @@ const POSTS = [
   },
   {
     "id": 33,
-    "title": "Tôi ổn trên mặt nước — một tay trên đầu",
+    "title": "T33. Tôi ổn trên mặt nước — một tay trên đầu",
     "excerpt": "Báo tình trạng ổn cho người ở xa trên mặt nước.",
     "content": [
       "Thực hiện: Đưa một cánh tay lên cao; đầu ngón tay chạm đỉnh đầu tạo cung lớn.",
@@ -708,7 +708,7 @@ const POSTS = [
     "categories": ["Liên lạc trên mặt nước"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-23",
+    "date": "2026-09-28",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -716,7 +716,7 @@ const POSTS = [
   },
   {
     "id": 34,
-    "title": "Tôi ổn trên mặt nước — hai tay tạo vòng tròn",
+    "title": "T34. Tôi ổn trên mặt nước — hai tay tạo vòng tròn",
     "excerpt": "Báo tình trạng ổn trên mặt nước khi hai tay rảnh.",
     "content": [
       "Thực hiện: Đưa hai cánh tay lên cao; đầu ngón tay chạm nhau tạo vòng lớn trên đầu.",
@@ -727,7 +727,7 @@ const POSTS = [
     "categories": ["Liên lạc trên mặt nước"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-23",
+    "date": "2026-09-28",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -735,7 +735,7 @@ const POSTS = [
   },
   {
     "id": 35,
-    "title": "Cần trợ giúp trên mặt nước",
+    "title": "T35. Cần trợ giúp trên mặt nước",
     "excerpt": "Kêu gọi trợ giúp trên mặt nước.",
     "content": [
       "Thực hiện: Vẫy cánh tay rõ ràng từ ngang mặt nước lên phía trên đầu.",
@@ -746,7 +746,7 @@ const POSTS = [
     "categories": ["Liên lạc trên mặt nước"],
     "tags": ["Ký hiệu tay"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-25",
+    "date": "2026-09-29",
     "readTime": 1,
     "icon": "🤚",
     "colors": ["#065a91", "#1b9aaa"],
@@ -754,7 +754,7 @@ const POSTS = [
   },
   {
     "id": 36,
-    "title": "Một lần giật",
+    "title": "D01. Một lần giật",
     "excerpt": "Gửi xuống: Hỏi tình trạng; yêu cầu lặp lại theo ngữ cảnh. Gửi lên: Báo ổn, đã đến đáy; đề nghị thu chùng hoặc lặp lại theo ngữ cảnh.",
     "content": [
       "Gửi xuống: Hỏi tình trạng; yêu cầu lặp lại theo ngữ cảnh.",
@@ -764,7 +764,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-03",
+    "date": "2026-09-29",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0873b9", "#1592d4"],
@@ -772,7 +772,7 @@ const POSTS = [
   },
   {
     "id": 37,
-    "title": "Hai lần giật",
+    "title": "D02. Hai lần giật",
     "excerpt": "Gửi xuống: Kiểm tra dự trữ khí. Gửi lên: Báo đã kiểm tra dự trữ khí.",
     "content": [
       "Gửi xuống: Kiểm tra dự trữ khí.",
@@ -782,7 +782,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-11",
+    "date": "2026-09-30",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#065a91", "#2a8fbd"],
@@ -790,7 +790,7 @@ const POSTS = [
   },
   {
     "id": 38,
-    "title": "Ba lần giật",
+    "title": "D03. Ba lần giật",
     "excerpt": "Gửi xuống: Đi lên; bắt đầu quá trình đưa lên. Gửi lên: Báo đang đi lên.",
     "content": [
       "Gửi xuống: Đi lên; bắt đầu quá trình đưa lên.",
@@ -800,7 +800,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-05",
+    "date": "2026-09-30",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -808,7 +808,7 @@ const POSTS = [
   },
   {
     "id": 39,
-    "title": "Bốn lần giật",
+    "title": "D04. Bốn lần giật",
     "excerpt": "Gửi xuống: Kiểm tra dự trữ khí hoặc chỉ báo áp suất tối thiểu. Gửi lên: Báo chỉ báo áp suất tối thiểu đã hoạt động.",
     "content": [
       "Gửi xuống: Kiểm tra dự trữ khí hoặc chỉ báo áp suất tối thiểu.",
@@ -818,7 +818,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-22",
+    "date": "2026-10-02",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -826,7 +826,7 @@ const POSTS = [
   },
   {
     "id": 40,
-    "title": "Giật nhanh liên tiếp trên bốn lần",
+    "title": "D05. Giật nhanh liên tiếp trên bốn lần",
     "excerpt": "Gửi xuống: Không gán nghĩa phát từ mặt nước trong bảng lựa chọn. Gửi lên: Báo động; người lặn gặp nguy cấp, yêu cầu hỗ trợ đưa lên.",
     "content": [
       "Gửi xuống: Không gán nghĩa phát từ mặt nước trong bảng lựa chọn.",
@@ -836,7 +836,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-06",
+    "date": "2026-10-02",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -844,7 +844,7 @@ const POSTS = [
   },
   {
     "id": 41,
-    "title": "Một lần lắc",
+    "title": "D06. Một lần lắc",
     "excerpt": "Gửi xuống: Dừng di chuyển hoặc dừng quá trình xuống/lên. Gửi lên: Yêu cầu dừng quá trình xuống/lên.",
     "content": [
       "Gửi xuống: Dừng di chuyển hoặc dừng quá trình xuống/lên.",
@@ -854,7 +854,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-06",
+    "date": "2026-10-02",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#065a91", "#1b9aaa"],
@@ -862,7 +862,7 @@ const POSTS = [
   },
   {
     "id": 42,
-    "title": "Hai lần lắc",
+    "title": "D07.Hai lần lắc",
     "excerpt": "Gửi xuống: Tiếp tục xuống hoặc di chuyển; đi thẳng theo ngữ cảnh. Gửi lên: Yêu cầu tiếp tục xuống hoặc nới dây.",
     "content": [
       "Gửi xuống: Tiếp tục xuống hoặc di chuyển; đi thẳng theo ngữ cảnh.",
@@ -872,7 +872,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-05",
+    "date": "2026-10-03",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0873b9", "#1592d4"],
@@ -880,7 +880,7 @@ const POSTS = [
   },
   {
     "id": 43,
-    "title": "Ba lần lắc",
+    "title": "D08. Ba lần lắc",
     "excerpt": "Gửi xuống: Giữ vị trí; đang cho người lặn thứ hai xuống. Gửi lên: Báo mắc kẹt, không thể ra nếu không có người lặn khác hỗ trợ.",
     "content": [
       "Gửi xuống: Giữ vị trí; đang cho người lặn thứ hai xuống.",
@@ -890,7 +890,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-19",
+    "date": "2026-10-03",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#065a91", "#2a8fbd"],
@@ -898,7 +898,7 @@ const POSTS = [
   },
   {
     "id": 44,
-    "title": "Một giật rồi một lắc",
+    "title": "D09. Một giật rồi một lắc",
     "excerpt": "Gửi xuống: Di chuyển sang phải. Gửi lên: Không gán thông điệp độc lập từ dưới lên.",
     "content": [
       "Gửi xuống: Di chuyển sang phải.",
@@ -908,7 +908,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-19",
+    "date": "2026-10-03",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -916,7 +916,7 @@ const POSTS = [
   },
   {
     "id": 45,
-    "title": "Hai giật rồi một lắc",
+    "title": "D10. Hai giật rồi một lắc",
     "excerpt": "Gửi xuống: Di chuyển sang trái. Gửi lên: Không gán thông điệp độc lập từ dưới lên.",
     "content": [
       "Gửi xuống: Di chuyển sang trái.",
@@ -926,7 +926,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-30",
+    "date": "2026-10-03",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -934,7 +934,7 @@ const POSTS = [
   },
   {
     "id": 46,
-    "title": "Một giật rồi kéo",
+    "title": "D11. Một giật rồi kéo",
     "excerpt": "Gửi xuống: Không gán thông điệp độc lập từ trên xuống. Gửi lên: Đề nghị chuyển dụng cụ.",
     "content": [
       "Gửi xuống: Không gán thông điệp độc lập từ trên xuống.",
@@ -944,7 +944,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-10",
+    "date": "2026-10-05",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -952,7 +952,7 @@ const POSTS = [
   },
   {
     "id": 47,
-    "title": "Hai giật rồi kéo",
+    "title": "D12. Hai giật rồi kéo",
     "excerpt": "Gửi xuống: Không gán thông điệp độc lập từ trên xuống. Gửi lên: Đề nghị chuyển dây.",
     "content": [
       "Gửi xuống: Không gán thông điệp độc lập từ trên xuống.",
@@ -962,7 +962,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-12",
+    "date": "2026-10-06",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#065a91", "#1b9aaa"],
@@ -970,7 +970,7 @@ const POSTS = [
   },
   {
     "id": 48,
-    "title": "Giật rồi lắc rồi giật",
+    "title": "D13. Giật rồi lắc rồi giật",
     "excerpt": "Gửi xuống: Tín hiệu dự phòng, chưa gán nội dung trong bản thảo. Gửi lên: Tín hiệu dự phòng, chưa gán nội dung trong bản thảo.",
     "content": [
       "Gửi xuống: Tín hiệu dự phòng, chưa gán nội dung trong bản thảo.",
@@ -980,7 +980,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu dây"],
     "tags": ["Ký hiệu dây"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-07",
+    "date": "2026-10-06",
     "readTime": 1,
     "icon": "🪢",
     "colors": ["#0873b9", "#1592d4"],
@@ -988,7 +988,7 @@ const POSTS = [
   },
   {
     "id": 49,
-    "title": "Thu hút chú ý",
+    "title": "A01. Thu hút chú ý",
     "excerpt": "Yêu cầu quan sát người phát.",
     "content": [
       "Thực hiện: Lia nhẹ vệt sáng vào vùng nền trong tầm quan sát của đồng đội, rồi phát ký hiệu tay đã chiếu sáng.",
@@ -999,7 +999,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-20",
+    "date": "2026-10-06",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#065a91", "#2a8fbd"],
@@ -1007,7 +1007,7 @@ const POSTS = [
   },
   {
     "id": 50,
-    "title": "Tôi ổn / Ổn không",
+    "title": "A02. Tôi ổn / Ổn không",
     "excerpt": "Hỏi hoặc báo tình trạng ổn.",
     "content": [
       "Thực hiện: Vẽ một vòng tròn lớn, rõ bằng vệt sáng trên nền nhìn thấy được.",
@@ -1018,7 +1018,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-02",
+    "date": "2026-10-06",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -1026,7 +1026,7 @@ const POSTS = [
   },
   {
     "id": 51,
-    "title": "Có vấn đề cần hỗ trợ",
+    "title": "A03. Có vấn đề cần hỗ trợ",
     "excerpt": "Báo có vấn đề, cần người nhận chú ý và hỗ trợ.",
     "content": [
       "Thực hiện: Lia vệt sáng nhanh, lặp qua lại theo phương ngang trong vùng người nhận quan sát được.",
@@ -1037,7 +1037,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-24",
+    "date": "2026-10-07",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -1045,7 +1045,7 @@ const POSTS = [
   },
   {
     "id": 52,
-    "title": "Đi lên bằng tay được chiếu sáng",
+    "title": "A04. Đi lên bằng tay được chiếu sáng",
     "excerpt": "Thông điệp đi lên như T3.",
     "content": [
       "Thực hiện: Chiếu đèn vào bàn tay đang làm ký hiệu T3; ngón cái hướng lên.",
@@ -1056,7 +1056,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-24",
+    "date": "2026-10-07",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -1064,7 +1064,7 @@ const POSTS = [
   },
   {
     "id": 53,
-    "title": "Đi xuống bằng tay được chiếu sáng",
+    "title": "A05. Đi xuống bằng tay được chiếu sáng",
     "excerpt": "Thông điệp đi xuống như T4.",
     "content": [
       "Thực hiện: Chiếu đèn vào bàn tay đang làm ký hiệu T4; ngón cái hướng xuống.",
@@ -1075,7 +1075,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-30",
+    "date": "2026-10-08",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#065a91", "#1b9aaa"],
@@ -1083,7 +1083,7 @@ const POSTS = [
   },
   {
     "id": 54,
-    "title": "Chỉ hướng di chuyển",
+    "title": "A06. Chỉ hướng di chuyển",
     "excerpt": "Chỉ hướng di chuyển trong không gian.",
     "content": [
       "Thực hiện: Chiếu sáng bàn tay T12 đang chỉ đúng hướng; để đồng đội nhìn rõ hình dạng và hướng ngón cái.",
@@ -1094,7 +1094,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-28",
+    "date": "2026-10-08",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#0873b9", "#1592d4"],
@@ -1102,7 +1102,7 @@ const POSTS = [
   },
   {
     "id": 55,
-    "title": "Tiếp tục di chuyển",
+    "title": "A07. Tiếp tục di chuyển",
     "excerpt": "Tiếp tục theo hướng được chỉ.",
     "content": [
       "Thực hiện: Sau khi thu hút chú ý, chiếu sáng ký hiệu chỉ hướng T12 trong ngữ cảnh đã thống nhất là tiếp tục.",
@@ -1113,7 +1113,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-06",
+    "date": "2026-10-09",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#065a91", "#2a8fbd"],
@@ -1121,7 +1121,7 @@ const POSTS = [
   },
   {
     "id": 56,
-    "title": "Quay lại",
+    "title": "A08. Quay lại",
     "excerpt": "Quay lại theo kế hoạch.",
     "content": [
       "Thực hiện: Chiếu sáng bàn tay đang làm T13, ngón trỏ xoay thành vòng nhỏ.",
@@ -1132,7 +1132,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-26",
+    "date": "2026-10-09",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -1140,7 +1140,7 @@ const POSTS = [
   },
   {
     "id": 57,
-    "title": "Chỉ vị trí trang bị cần kiểm tra",
+    "title": "A09. Chỉ vị trí trang bị cần kiểm tra",
     "excerpt": "Làm rõ đối tượng đang được trao đổi.",
     "content": [
       "Thực hiện: Giữ vệt sáng tại bộ phận cần chú ý, kết hợp chỉ tay hoặc T5 khi có sự cố.",
@@ -1151,7 +1151,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-08",
+    "date": "2026-10-10",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#1592d4", "#2f5d8a"],
@@ -1159,7 +1159,7 @@ const POSTS = [
   },
   {
     "id": 58,
-    "title": "Duy trì dấu nhận biết vị trí",
+    "title": "A10. Duy trì dấu nhận biết vị trí",
     "excerpt": "Hỗ trợ nhận biết vị trí.",
     "content": [
       "Thực hiện: Giữ nguồn sáng ổn định tại vị trí đã thống nhất để đồng đội nhận biết vị trí người lặn.",
@@ -1170,7 +1170,7 @@ const POSTS = [
     "categories": ["Bộ ký hiệu ánh sáng"],
     "tags": ["Ký hiệu ánh sáng"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-06",
+    "date": "2026-10-10",
     "readTime": 1,
     "icon": "🔦",
     "colors": ["#0873b9", "#4a7fb5"],
@@ -1178,7 +1178,7 @@ const POSTS = [
   },
   {
     "id": 59,
-    "title": "Vỗ nhẹ vai để gọi chú ý",
+    "title": "X01. Vỗ nhẹ vai để gọi chú ý",
     "excerpt": "Gọi chú ý và thiết lập liên lạc gần.",
     "content": [
       "Thực hiện: Đặt bàn tay lên vùng vai ngoài có thể tiếp cận; vỗ nhẹ để người kia nhận biết, sau đó chuyển sang tiếp xúc bàn tay hoặc cẳng tay.",
@@ -1189,7 +1189,7 @@ const POSTS = [
     "categories": ["Vỗ vai và bóp tay"],
     "tags": ["Ký hiệu tiếp xúc"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-02",
+    "date": "2026-10-11",
     "readTime": 1,
     "icon": "🤝",
     "colors": ["#065a91", "#1b9aaa"],
@@ -1197,7 +1197,7 @@ const POSTS = [
   },
   {
     "id": 60,
-    "title": "Bóp để dừng",
+    "title": "X02. Bóp để dừng",
     "excerpt": "Yêu cầu dừng.",
     "content": [
       "Thực hiện: Khi đã thiết lập tiếp xúc, bóp rõ vào bàn tay hoặc cẳng tay ở vị trí đã thống nhất; không xoắn hoặc giật.",
@@ -1208,7 +1208,7 @@ const POSTS = [
     "categories": ["Vỗ vai và bóp tay"],
     "tags": ["Ký hiệu tiếp xúc"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-08",
+    "date": "2026-10-12",
     "readTime": 1,
     "icon": "🤝",
     "colors": ["#0873b9", "#1592d4"],
@@ -1216,7 +1216,7 @@ const POSTS = [
   },
   {
     "id": 61,
-    "title": "Bóp nhanh liên tiếp báo vấn đề hết khí",
+    "title": "X03. Bóp nhanh liên tiếp báo vấn đề hết khí",
     "excerpt": "Báo vấn đề hết khí, cần hỗ trợ ngay.",
     "content": [
       "Thực hiện: Đang giữ tiếp xúc, thực hiện các lần bóp nhanh, phân biệt rõ với một lần bóp dừng.",
@@ -1227,7 +1227,7 @@ const POSTS = [
     "categories": ["Vỗ vai và bóp tay"],
     "tags": ["Ký hiệu tiếp xúc"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-09-28",
+    "date": "2026-10-12",
     "readTime": 1,
     "icon": "🤝",
     "colors": ["#065a91", "#2a8fbd"],
@@ -1235,7 +1235,7 @@ const POSTS = [
   },
   {
     "id": 62,
-    "title": "Đẩy nhẹ theo hướng tiến",
+    "title": "X04. Đẩy nhẹ theo hướng tiến",
     "excerpt": "Yêu cầu đi tiếp theo hướng tiến.",
     "content": [
       "Thực hiện: Giữ tiếp xúc cẳng tay; truyền lực đẩy nhẹ theo chiều tiến đã thống nhất của đội hình.",
@@ -1246,7 +1246,7 @@ const POSTS = [
     "categories": ["Vỗ vai và bóp tay"],
     "tags": ["Ký hiệu tiếp xúc"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-03",
+    "date": "2026-10-14",
     "readTime": 1,
     "icon": "🤝",
     "colors": ["#0a6aa8", "#3d8fa5"],
@@ -1254,7 +1254,7 @@ const POSTS = [
   },
   {
     "id": 63,
-    "title": "Kéo nhẹ theo hướng lùi",
+    "title": "X05. Kéo nhẹ theo hướng lùi",
     "excerpt": "Yêu cầu lùi lại.",
     "content": [
       "Thực hiện: Giữ tiếp xúc cẳng tay; truyền lực kéo nhẹ về chiều lùi của đội hình.",
@@ -1265,7 +1265,7 @@ const POSTS = [
     "categories": ["Vỗ vai và bóp tay"],
     "tags": ["Ký hiệu tiếp xúc"],
     "author": "Tác giả: Đường Khắc Tùng",
-    "date": "2026-10-09",
+    "date": "2026-10-14",
     "readTime": 1,
     "icon": "🤝",
     "colors": ["#1592d4", "#2f5d8a"],

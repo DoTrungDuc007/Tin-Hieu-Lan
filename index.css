@@ -281,6 +281,29 @@ img {
   max-width: 640px;
 }
 
+/* Căn giữa chữ trong banner */
+.banner .container {
+  text-align: center;
+}
+
+.banner-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Banner ở trang chủ: không có ô tìm kiếm nên bỏ khoảng cách thừa phía dưới dòng mô tả và căn lề trên/dưới cân hơn */
+.banner.banner--home {
+  padding: 44px 0;
+}
+
+.banner--home .banner-sub {
+  margin-bottom: 0;
+}
+
+.search-bar[hidden] {
+  display: none;
+}
+
 .search-bar {
   display: flex;
   align-items: stretch;
@@ -463,6 +486,18 @@ img {
   grid-template-areas: "count results" "side results";
 }
 
+/* Bộ không có danh mục con (dây, ánh sáng, vỗ vai/bóp tay) hoặc danh sách bài đã lưu: không có sidebar, danh sách trải hết chiều ngang */
+.layout.no-sidebar {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "count" "results";
+}
+
+.layout.no-sidebar .sidebar,
+.layout.no-sidebar .btn-filter-open {
+  display: none;
+}
+
 .result-head {
   grid-area: count;
 }
@@ -545,55 +580,6 @@ img {
 
 .filter-list li.is-empty label {
   opacity: .5;
-}
-
-/* Danh mục cha có con (ví dụ "Bộ ký hiệu tay"): hàng cha + nút mũi tên sổ ra các danh mục con */
-.cat-row {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.cat-row label {
-  flex: 1;
-  min-width: 0;
-}
-
-.subcat-toggle {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--muted);
-}
-
-.subcat-toggle:hover {
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.subcat-toggle .icon {
-  transition: transform .2s;
-}
-
-.subcat-toggle[aria-expanded="true"] .icon {
-  transform: rotate(180deg);
-}
-
-.subcat-list {
-  display: grid;
-  gap: 2px;
-  margin: 2px 0 6px 14px;
-  padding-left: 12px;
-  border-left: 2px solid var(--line);
-}
-
-.subcat-list[hidden] {
-  display: none;
 }
 
 
@@ -1070,6 +1056,79 @@ mark {
 }
 
 /* ===== Màn hình "Khảo sát & Thử nghiệm" (thay chỗ banner + danh sách, không phải popup) ===== */
+/* ===== Trang chủ: 4 ô danh mục lớn (2x2) ===== */
+.home-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 56px 0 64px;
+}
+
+/* display:flex ở trên sẽ đè thuộc tính hidden mặc định của trình duyệt, nên phải ép lại để ẩn được thật */
+.home-view[hidden] {
+  display: none;
+}
+
+.home-title {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 36px;
+}
+
+.home-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 16px;
+  border: 1px solid var(--primary-line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+  transition: transform .15s, box-shadow .15s, border-color .15s, background .15s;
+}
+
+.home-tile:hover,
+.home-tile:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: var(--shadow-lg);
+}
+
+.home-tile-icon {
+  font-size: 44px;
+  line-height: 1;
+}
+
+/* Icon SVG (cuộn dây) co theo font-size của .home-tile-icon, đồng bộ kích thước với các icon emoji còn lại */
+.home-tile-icon svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.home-tile-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-tile-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .survey-view {
   flex: 1;
   padding-top: 24px;
@@ -1080,6 +1139,7 @@ mark {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  margin-bottom: 14px;
   color: var(--primary);
   font-weight: 600;
 }
@@ -1304,6 +1364,38 @@ body.modal-open {
   }
 }
 
+/* Popup xem ảnh đầy đủ: chỉ có ảnh (co theo đúng tỉ lệ gốc, không cắt), nền trong suốt, nền mờ tối hơn popup thường. */
+.modal-lightbox {
+  /* fit-content (thay vì auto) để hộp co theo đúng kích thước ảnh — dialog mặc định canh giữa bằng
+     margin:auto trong khung inset:0, nhưng với width:auto (và left/right đều là 0) nó sẽ giãn lấp đầy
+     gần hết màn hình thay vì co khít nội dung, khiến ảnh bị dạt sang trái thay vì nằm giữa. */
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.modal-lightbox::backdrop {
+  background: rgba(5, 12, 23, .85);
+}
+
+.modal-lightbox img {
+  display: block;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100dvh - 48px);
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  background: #fff;
+}
+
+.modal-lightbox .modal-close {
+  top: -14px;
+  right: -14px;
+}
+
 /* Hai khối: ảnh bên trái (cố định) | tiêu đề + nội dung bên phải (cuộn riêng nếu dài) */
 .modal-layout {
   display: grid;
@@ -1316,6 +1408,62 @@ body.modal-open {
   position: relative;
   min-height: 0;
   background: var(--primary-soft);
+}
+
+/* Khi bài có ảnh thật, khối ảnh là một <button> để bấm xem ảnh đầy đủ (cả .thumb bên trong đã position:absolute
+   lấp đầy nên không cần reset width/height ở đây). */
+button.modal-media {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+
+button.modal-media:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+button.modal-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .35), transparent 40%);
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+button.modal-media:hover::after,
+button.modal-media:focus-visible::after {
+  opacity: 1;
+}
+
+.zoom-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(10, 37, 64, .72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity .15s;
+  pointer-events: none;
+}
+
+button.modal-media:hover .zoom-hint,
+button.modal-media:focus-visible .zoom-hint {
+  opacity: 1;
 }
 
 .modal-close {
@@ -1602,6 +1750,35 @@ body.modal-open {
 }
 
 @media (max-width: 639px) {
+  .home-view {
+    padding: 32px 0 40px;
+  }
+
+  .home-title {
+    font-size: 19px;
+  }
+
+  .banner.banner--home {
+    padding: 28px 0;
+  }
+
+  .home-grid {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .home-tile {
+    padding: 22px 10px;
+  }
+
+  .home-tile-icon {
+    font-size: 34px;
+  }
+
+  .home-tile-title {
+    font-size: 14px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1667,6 +1844,7 @@ body.modal-open {
     font-size: 72px;
   }
 
+  /* mobile: cả popup cuộn, không có đệm để bù */
   .modal-content {
     --pad-b: 24px;
     --stick: 0px;
@@ -1674,10 +1852,9 @@ body.modal-open {
     padding: 20px 18px var(--pad-b);
   }
 
-  /* mobile: cả popup cuộn, không có đệm để bù */
-  .modal-plain-body {
-    max-height: calc(100dvh - 32px);
-    padding: 24px 20px 28px;
+  .modal-lightbox .modal-close {
+    top: 10px;
+    right: 10px;
   }
 }
 

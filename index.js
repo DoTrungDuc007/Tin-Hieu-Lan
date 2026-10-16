@@ -27,7 +27,7 @@ const MODES = ['title', 'content']; // tìm theo tiêu đề / tìm theo nội d
 const MODE_PLACEHOLDER = { title: 'Nhập từ khóa trong tiêu đề…', content: 'Nhập từ khóa trong nội dung bài viết…' };
 
 const DEFAULT_STATE = {
-  q: '', mode: 'title', categories: [], time: 'all', sort: 'newest', savedOnly: false, page: 1,
+  set: '', q: '', mode: 'title', categories: [], time: 'all', sort: 'oldest', savedOnly: false, page: 1,
 };
 
 /* ---------- Tiện ích DOM ---------- */
@@ -134,7 +134,6 @@ let categoryNames = []; // phẳng hóa categoryTree (cả cha lẫn con) – d�
 let state = { ...DEFAULT_STATE, categories: [] };
 let saved = new Set(loadSaved());
 const categoryEls = new Map(); // tên danh mục (cha hoặc con) -> { input, count, li }
-const subcatUI = new Map(); // tên danh mục cha có con -> { subList, toggle } – để tự mở khi có con đang được chọn
 
 /** Danh mục cha trả về danh sách tên các con (giá trị thật nằm trong p.categories); danh mục không có con trả về chính nó. */
 function leavesOf(name) {
@@ -200,6 +199,8 @@ function indexFacets() {
 /* ---------- Lọc & sắp xếp ---------- */
 /** `skipCategories` bỏ qua bộ lọc danh mục – dùng để đếm số bài cho từng danh mục ở sidebar. */
 function matches(p, s, skipCategories = false) {
+  // Luôn chỉ xét bài thuộc bộ ký hiệu đang xem (s.set); bộ khác không bao giờ xuất hiện.
+  if (s.set && !leavesOf(s.set).some((c) => p.categories.includes(c))) return false;
   if (!skipCategories && s.categories.length) {
     const leaves = s.categories.flatMap(leavesOf); // danh mục cha được gộp thành toàn bộ con của nó
     if (!leaves.some((c) => p.categories.includes(c))) return false;
@@ -252,8 +253,8 @@ function setQuery(q) {
   const had = Boolean(state.q.trim());
   const has = Boolean(q.trim());
   state.q = q;
-  if (has && !had && state.sort === 'newest') state.sort = 'relevance';
-  else if (!has && had && state.sort === 'relevance') state.sort = 'newest';
+  if (has && !had && state.sort === DEFAULT_STATE.sort) state.sort = 'relevance';
+  else if (!has && had && state.sort === 'relevance') state.sort = DEFAULT_STATE.sort;
 }
 
 const hasActiveFilters = () =>
@@ -270,7 +271,9 @@ function readURL() {
   let sort = one('sort', SORT_OPTIONS.map((o) => o.value), autoSort);
   if (sort === 'relevance' && !q.trim()) sort = DEFAULT_STATE.sort;
 
+  const setName = categoryTree.some((c) => c.name === p.get('set')) ? p.get('set') : '';
   state = {
+    set: setName,
     q,
     mode: one('mode', MODES, DEFAULT_STATE.mode), // giá trị cũ như "author"/"all" bị bỏ qua
     categories: list('category', categoryNames),
@@ -283,6 +286,7 @@ function readURL() {
 
 function writeURL() {
   const p = new URLSearchParams();
+  if (state.set) p.set('set', state.set);
   if (state.q.trim()) p.set('q', state.q.trim());
   if (state.mode !== DEFAULT_STATE.mode) p.set('mode', state.mode);
   if (state.categories.length) p.set('category', state.categories.join(','));
@@ -397,6 +401,7 @@ function renderHeading(count) {
   const q = state.q.trim();
   title.replaceChildren(
     ...[
+      state.set ? [el('strong', { class: 'set-name', text: state.set }), ' – '] : '',
       'Có ',
       el('strong', { text: `${count} bài viết` }),
       state.savedOnly ? ' đã lưu' : '',
@@ -498,87 +503,44 @@ function buildStaticControls() {
   );
 }
 
-/** Một hàng checkbox danh mục dùng chung cho cả danh mục cha và danh mục con. */
-function categoryRow(name) {
-  const input = el('input', { type: 'checkbox', value: name, 'data-category': name });
-  const count = el('span', { class: 'count' });
-  const label = el('label', {}, input, el('span', { class: 'name', text: name }), count);
-  categoryEls.set(name, { input, count, li: null }); // li gắn lại ở nơi gọi, sau khi biết nó nằm trong <li> nào
-  return { input, count, label };
-}
-
 /**
- * Sidebar chỉ có một khối "Danh mục": 4 danh mục lớn trong CATEGORIES (checkbox, chọn được nhiều).
- * Danh mục có danh mục con (hiện chỉ "Bộ ký hiệu tay") có thêm nút mũi tên để sổ/thu các con;
- * chọn danh mục cha lọc theo toàn bộ con của nó, chọn một con thì chỉ lọc đúng con đó.
+ * Sidebar chỉ có một khối "Danh mục" và chỉ liệt kê danh mục con của bộ ký hiệu đang xem (state.set).
+ * Bộ không có danh mục con (dây, ánh sáng, vỗ vai…) thì ẩn hẳn sidebar (class no-sidebar).
+ * Gọi lại mỗi khi đổi bộ.
  */
 function buildSidebar() {
-  const list = el('ul', { class: 'filter-list' });
-  categoryTree.forEach((node) => {
-    const { label } = categoryRow(node.name);
-
-    if (!node.children.length) {
-      const li = el('li', {}, label);
-      categoryEls.get(node.name).li = li;
-      list.append(li);
-      return;
-    }
-
-    const subList = el(
-      'ul',
-      { class: 'subcat-list', hidden: true },
-      node.children.map((child) => {
-        const { label: subLabel } = categoryRow(child);
-        const li = el('li', {}, subLabel);
-        categoryEls.get(child).li = li;
-        return li;
-      }),
-    );
-    const toggle = el(
-      'button',
-      {
-        type: 'button',
-        class: 'subcat-toggle',
-        'aria-expanded': 'false',
-        'aria-label': `Hiện các danh mục con của "${node.name}"`,
-        onclick: () => {
-          subList.hidden = !subList.hidden;
-          toggle.setAttribute('aria-expanded', String(!subList.hidden));
-        },
-      },
-      icon('chevron', 'icon icon-sm'),
-    );
-    subcatUI.set(node.name, { subList, toggle });
-
-    const li = el('li', { class: 'cat-parent' }, el('div', { class: 'cat-row' }, label, toggle), subList);
-    categoryEls.get(node.name).li = li;
-    list.append(li);
-  });
-  $('#filter-groups').replaceChildren(el('section', { class: 'filter-group' }, el('h3', { text: 'Danh mục' }), list));
+  categoryEls.clear();
+  const node = categoryTree.find((c) => c.name === state.set);
+  const children = node ? node.children : [];
+  $('.layout').classList.toggle('no-sidebar', children.length === 0);
+  if (!children.length) {
+    $('#filter-groups').replaceChildren();
+    return;
+  }
+  const list = el(
+    'ul',
+    { class: 'filter-list' },
+    children.map((name) => {
+      const input = el('input', { type: 'checkbox', value: name, 'data-category': name });
+      const count = el('span', { class: 'count' });
+      const li = el('li', {}, el('label', {}, input, el('span', { class: 'name', text: name }), count));
+      categoryEls.set(name, { input, count, li });
+      return li;
+    }),
+  );
+  $('#filter-groups').replaceChildren(el('section', { class: 'filter-group' }, el('h3', { text: node.name }), list));
 }
 
-/** Đồng bộ trạng thái checked và số bài của từng danh mục (cha lẫn con) theo `state`. */
+/** Đồng bộ trạng thái checked và số bài của từng danh mục con theo `state`. */
 function syncSidebar() {
   // Đếm theo các bộ lọc khác (từ khóa, thời gian…) nhưng không tính chính bộ lọc danh mục.
   const pool = posts.filter((p) => matches(p, state, true));
-
   categoryEls.forEach(({ input, count, li }, name) => {
     const checked = state.categories.includes(name);
-    const leaves = leavesOf(name); // danh mục cha gộp đếm theo toàn bộ con
-    const n = pool.filter((p) => leaves.some((c) => p.categories.includes(c))).length;
+    const n = pool.filter((p) => p.categories.includes(name)).length;
     input.checked = checked;
     count.textContent = `(${n})`;
     li.classList.toggle('is-empty', n === 0 && !checked);
-  });
-
-  // Tự sổ danh mục con ra nếu đang có một con được chọn (ví dụ mở thẳng bằng URL), không tự thu lại.
-  subcatUI.forEach(({ subList, toggle }, parentName) => {
-    const node = categoryTree.find((c) => c.name === parentName);
-    const hasCheckedChild = node.children.some((child) => state.categories.includes(child));
-    if (hasCheckedChild && subList.hidden) {
-      subList.hidden = false;
-      toggle.setAttribute('aria-expanded', 'true');
-    }
   });
 }
 
@@ -620,7 +582,7 @@ function refresh({ keepPage = false } = {}) {
 }
 
 function resetFilters() {
-  state = { ...DEFAULT_STATE, categories: [], mode: state.mode, sort: state.sort === 'relevance' ? DEFAULT_STATE.sort : state.sort };
+  state = { ...DEFAULT_STATE, set: state.set, categories: [], mode: state.mode, sort: state.sort === 'relevance' ? DEFAULT_STATE.sort : state.sort };
   refresh();
 }
 
@@ -666,9 +628,12 @@ function openPost(id) {
   modalPostId = id;
   const kw = tokensOf(state.q);
 
-  // Hai khối: ảnh bên trái, tiêu đề + nội dung bên phải.
+  // Hai khối: ảnh bên trái, tiêu đề + nội dung bên phải. Có ảnh thật thì khối ảnh là nút bấm để xem ảnh đầy đủ.
+  const hasImage = Boolean(p.path || p.thumbnail);
+  const mediaTag = hasImage ? 'button' : 'div';
+  const mediaAttrs = hasImage ? { type: 'button', class: 'modal-media', 'aria-label': 'Xem ảnh đầy đủ' } : { class: 'modal-media' };
   modalBody.replaceChildren(
-    el('div', { class: 'modal-media' }, makeThumb(p, 'modal-hero', true)),
+    el(mediaTag, mediaAttrs, makeThumb(p, 'modal-hero', true), hasImage ? el('span', { class: 'zoom-hint' }, icon('search', 'icon icon-sm'), 'Xem ảnh đầy đủ') : null),
     el(
       'div',
       { class: 'modal-content' },
@@ -711,17 +676,49 @@ modal.addEventListener('click', (e) => {
 });
 $('#modal-close').addEventListener('click', closeModal);
 
+/** Popup xem ảnh đầy đủ, mở từ ảnh trong popup chi tiết bài viết (chồng lên trên, không đóng popup bài viết). */
+const imageModal = $('#image-modal');
+const imageModalImg = $('#image-modal-img');
+let imageModalTrigger = null;
+
+function openImageLightbox(triggerBtn) {
+  const img = triggerBtn.querySelector('img');
+  if (!img) return;
+  imageModalImg.src = img.currentSrc || img.src;
+  imageModalImg.alt = img.alt || triggerBtn.getAttribute('aria-label') || '';
+  imageModalTrigger = triggerBtn;
+  imageModal.showModal();
+}
+function onImageModalClosed() {
+  if (imageModal.open) return;
+  imageModalTrigger?.focus();
+  imageModalTrigger = null;
+}
+function closeImageLightbox() {
+  imageModal.close();
+  onImageModalClosed();
+}
+imageModal.addEventListener('close', onImageModalClosed);
+imageModal.addEventListener('click', (e) => {
+  if (e.target === imageModal) closeImageLightbox(); // bấm vào nền mờ
+});
+$('#image-modal-close').addEventListener('click', closeImageLightbox);
+
 /**
- * Màn hình "Khảo sát & Thử nghiệm": KHÔNG phải popup, mà thay chỗ banner + danh sách bằng nội dung
- * tĩnh lấy từ SURVEY_INFO (data.js). Chuyển qua lại bằng URL hash #survey, giống cách #top/#contact
- * đang dùng trong header — bấm nút ở header, hoặc "Quay lại danh sách", chỉ đổi hash; việc ẩn/hiện
- * do hashchange xử lý, nên mở thẳng link có #survey cũng hiển thị đúng ngay từ đầu.
+ * 3 màn hình của trang, chuyển qua lại bằng URL hash (giống #top/#contact đã dùng trong header):
+ *   'home'   (#top hoặc trống)  – 4 ô danh mục lớn, màn mặc định
+ *   'list'   (#list)            – banner (tìm kiếm) + danh sách bài viết (có thể lọc theo danh mục)
+ *   'survey' (#survey)          – nội dung tĩnh "Khảo sát & Thử nghiệm", lấy từ SURVEY_INFO (data.js)
+ * Việc ẩn/hiện do hashchange xử lý nên mở thẳng link có #list hay #survey cũng hiển thị đúng ngay từ đầu.
+ * Các hash khác (ví dụ #contact) chỉ là điểm neo cuộn trang, không đổi màn hình đang xem.
  */
+const homeView = $('#home-view');
 const bannerEl = $('#banner');
 const mainEl = $('#articles');
 const surveyView = $('#survey-view');
 const surveyTitle = $('#survey-title');
 const surveyBody = $('#survey-body');
+let currentView = 'home';
 
 function renderSurveyView() {
   if (typeof SURVEY_INFO === 'undefined' || surveyBody.children.length) return; // chưa có dữ liệu, hoặc đã dựng rồi thì không dựng lại
@@ -743,14 +740,50 @@ function renderSurveyView() {
   );
 }
 
-function syncSurveyView() {
-  const show = location.hash === '#survey';
-  if (show) renderSurveyView();
-  bannerEl.hidden = show;
-  mainEl.hidden = show;
-  surveyView.hidden = !show;
+function showView(name) {
+  currentView = name;
+  homeView.hidden = name !== 'home';
+  bannerEl.hidden = name === 'survey'; // trang chủ vẫn có banner, nhưng không có ô tìm kiếm
+  bannerEl.classList.toggle('banner--home', name === 'home');
+  $('#search-form').hidden = name !== 'list';
+  mainEl.hidden = name !== 'list';
+  surveyView.hidden = name !== 'survey';
+  if (name === 'survey') renderSurveyView();
 }
-window.addEventListener('hashchange', syncSurveyView);
+
+function syncView() {
+  if (location.hash === '#survey') return showView('survey');
+  if (location.hash === '#list') {
+    if (!state.set && posts.length) { // vào thẳng #list mà chưa chọn bộ: mặc định bộ đầu tiên
+      state.set = categoryTree[0].name;
+      buildSidebar();
+      refresh();
+    }
+    return showView('list');
+  }
+  if (location.hash === '#top' || location.hash === '') return showView('home');
+  // hash khác (vd #contact): giữ nguyên màn đang xem, chỉ cuộn trang
+}
+window.addEventListener('hashchange', syncView);
+
+/** Bấm một ô ở trang chủ: chỉ xem bộ ký hiệu đó (bỏ hết bộ lọc khác) rồi chuyển sang màn danh sách. */
+function openHomeCategory(name) {
+  state = { ...DEFAULT_STATE, set: name, categories: [] };
+  buildSidebar();
+  location.hash = 'list'; // đổi URL + day lịch sử trình duyệt, kích hoạt syncView() hiện màn danh sách
+  refresh();
+  window.scrollTo({ top: 0 });
+}
+
+/** Hiện số bài trong từng ô ở trang chủ, tính theo đúng danh mục đó (gộp cả con nếu có, qua leavesOf). */
+function syncHomeCounts() {
+  $$('.home-tile').forEach((tile) => {
+    const name = tile.dataset.homeCategory;
+    const leaves = leavesOf(name);
+    const n = posts.filter((p) => leaves.some((c) => p.categories.includes(c))).length;
+    $('.home-tile-count', tile).textContent = `${n} bài viết`;
+  });
+}
 
 /* ---------- Ngăn kéo bộ lọc (mobile) ---------- */
 const sidebar = $('#sidebar');
@@ -845,6 +878,12 @@ function bindEvents() {
     const open = e.target.closest('[data-open-id]');
     if (open) return openPost(Number(open.dataset.openId));
 
+    const mediaBtn = e.target.closest('button.modal-media');
+    if (mediaBtn) return openImageLightbox(mediaBtn);
+
+    const tile = e.target.closest('.home-tile');
+    if (tile) return openHomeCategory(tile.dataset.homeCategory);
+
     const page = e.target.closest('[data-page]');
     if (page) return goToPage(Number(page.dataset.page));
 
@@ -855,7 +894,7 @@ function bindEvents() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape' || modal.open) return; // <dialog> tự xử lý Esc
+    if (e.key !== 'Escape' || modal.open || imageModal.open) return; // <dialog> tự xử lý Esc
     if (sidebar.classList.contains('open')) setDrawer(false);
     else if (nav.classList.contains('open')) {
       setNav(false);
@@ -881,12 +920,25 @@ function bindEvents() {
 function init() {
   $('#year').textContent = new Date().getFullYear();
   bindEvents();
-  syncSurveyView(); // xử lý cả trường hợp mở thẳng link có #survey; không phụ thuộc việc tải bài viết có thành công hay không
+
+  // Xác định màn hình ban đầu: #survey/#list hiện đúng màn đó; có tham số lọc trên URL (link chia sẻ
+  // bộ lọc cũ) thì cũng vào thẳng màn danh sách dù hash chưa phải #list; còn lại vào màn trang chủ.
+  const hasQuery = [...new URLSearchParams(location.search).keys()].length > 0;
+  let initialView = 'home';
+  if (location.hash === '#survey') initialView = 'survey';
+  else if (location.hash === '#list' || hasQuery) initialView = 'list';
+  if (initialView === 'list' && location.hash !== '#list') {
+    try {
+      history.replaceState(null, '', location.pathname + location.search + '#list');
+    } catch { /* mở bằng file:// có thể bị chặn */ }
+  }
+  showView(initialView);
 
   try {
     posts = preparePosts();
   } catch (err) {
     console.error('Không đọc được dữ liệu bài viết:', err);
+    showView('list'); // bắt buộc hiện màn danh sách để người dùng còn thấy được thông báo lỗi
     listEl.replaceChildren();
     listEl.setAttribute('aria-busy', 'false');
     $('#result-title').textContent = 'Không hiển thị được bài viết';
@@ -912,8 +964,10 @@ function init() {
   posts.forEach((p) => postById.set(p.id, p));
   indexFacets();
   buildStaticControls();
-  buildSidebar();
+  syncHomeCounts();
   readURL();
+  if (!state.set && initialView === 'list') state.set = categoryTree[0].name; // link cũ không có bộ: mặc định bộ đầu tiên
+  buildSidebar();
   refresh({ keepPage: true }); // giữ số trang lấy từ URL
 }
 
