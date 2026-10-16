@@ -303,10 +303,7 @@ function makeThumb(p, extraClass = '', eager = false) {
   const box = el('div', { class: `thumb ${extraClass}`.trim(), 'aria-hidden': 'true' });
   box.style.background = `linear-gradient(135deg, ${c1}, ${c2})`;
   const src = p.path || p.thumbnail; // "path" là trường chính thức; "thumbnail" vẫn được hỗ trợ cho dữ liệu cũ
-  // Ảnh sơ đồ (dây/ánh sáng/tiếp xúc) là ảnh ngang, cắt theo kiểu "cover" sẽ mất nội dung ở hai bên;
-  // hiện trọn ảnh và canh giữa thay vì cắt (ảnh người lặn vẫn cắt lấp đầy khung như cũ).
-  const isDiagram = p.tags && p.tags[0] !== 'Ký hiệu tay';
-  if (src) box.append(el('img', { src, class: isDiagram ? 'img-contain' : '', alt: '', loading: eager ? 'eager' : 'lazy' }));
+  if (src) box.append(el('img', { src, alt: '', loading: eager ? 'eager' : 'lazy' }));
   else box.append(el('span', { class: 'emoji', text: p.icon || '🤿' }));
   return box;
 }

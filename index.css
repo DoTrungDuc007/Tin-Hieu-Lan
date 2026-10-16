@@ -726,18 +726,17 @@ img {
   border: 1px solid rgba(255, 255, 255, .6);
 }
 
+/* Hiện trọn vẹn ảnh và canh giữa (không cắt mất nội dung), dù ảnh dọc (người lặn) hay ảnh ngang (sơ đồ).
+   Dùng position:absolute + inset:0 thay vì width/height:100% vì chiều cao của .thumb đến từ aspect-ratio
+   trên một grid item — Chrome không coi chiều cao đó là "xác định" nên height:100% của ảnh bị tính sai
+   thành kiểu height:auto (giữ nguyên tỉ lệ ảnh gốc), khiến ảnh tràn khỏi khung rồi bị overflow cắt mất. */
 .thumb img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Ảnh sơ đồ (dây/ánh sáng/tiếp xúc): ảnh ngang, hiện trọn vẹn và canh giữa thay vì cắt mất nội dung hai bên. */
-.thumb img.img-contain {
   object-fit: contain;
-  padding: 10%;
-  box-sizing: border-box;
+  object-position: center;
 }
 
 .thumb .emoji {
