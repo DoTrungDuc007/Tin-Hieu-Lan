@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tín Hiệu Lặn – Kiến thức lặn biển</title>
+  <meta name="description"
+    content="Tín Hiệu Lặn: bài viết về kỹ thuật lặn, thiết bị, an toàn, điểm lặn, sinh vật biển và đào tạo chứng chỉ.">
+  <link rel="stylesheet" href="index.css">
+  <script src="data.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <!-- Bộ icon dùng chung -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-3.5-3.5" />
+      </symbol>
+      <symbol id="i-list" viewBox="0 0 24 24">
+        <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24">
+        <path d="M3 5h18l-7 8v6l-4-2v-4z" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="m5 12 5 5L20 7" />
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+      </symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24">
+        <path d="M2 13c2-3 4-3 6 0s4 3 6 0 4-3 6 0M2 19c2-3 4-3 6 0s4 3 6 0 4-3 6 0" />
+        <circle cx="12" cy="6" r="2.5" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#articles">Bỏ qua, tới danh sách bài viết</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Tín Hiệu Lặn – về đầu trang">
+        <span class="logo-mark"><svg class="icon" aria-hidden="true">
+            <use href="#i-wave" />
+          </svg></span>
+        <span class="logo-text">Tín Hiệu <b>Lặn</b></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+        aria-label="Mở menu">
+        <svg class="icon" aria-hidden="true">
+          <use href="#i-menu" />
+        </svg>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#top">Trang chủ</a></li>
+          <li><a href="#survey" id="nav-survey">Khảo sát &amp; Thử nghiệm</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== BANNER ===== -->
+  <section class="banner" id="banner" aria-labelledby="banner-title">
+    <div class="container">
+      <h1 id="banner-title">Kiến thức lặn biển cho mọi người</h1>
+      <p class="banner-sub">Các hệ thống tín hiệu liên lạc khi lặn – ngắn gọn, dễ hiểu, dễ áp dụng.</p>
+
+      <form class="search-bar" id="search-form" role="search" autocomplete="off">
+        <div class="field field-mode" role="radiogroup" aria-labelledby="mode-label">
+          <span class="mode-label" id="mode-label">Tìm theo:</span>
+          <label class="chip-radio"><input type="radio" name="mode" value="title" checked><span>Tiêu đề</span></label>
+          <label class="chip-radio"><input type="radio" name="mode" value="content"><span>Nội dung</span></label>
+        </div>
+        <div class="field field-q">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-search" />
+          </svg>
+          <label class="sr-only" for="f-q">Từ khóa</label>
+          <input id="f-q" type="text" placeholder="Nhập từ khóa trong tiêu đề…" enterkeyhint="search"
+            spellcheck="false">
+          <button class="clear" id="q-clear" type="button" aria-label="Xóa từ khóa" hidden>
+            <svg class="icon icon-sm" aria-hidden="true">
+              <use href="#i-x" />
+            </svg>
+          </button>
+        </div>
+        <div class="field field-time">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-clock" />
+          </svg>
+          <label class="sr-only" for="f-time">Thời gian đăng</label>
+          <select id="f-time"></select>
+          <svg class="icon icon-sm chev" aria-hidden="true">
+            <use href="#i-chevron" />
+          </svg>
+        </div>
+        <button class="btn-search" type="submit">Tìm kiếm</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== BODY ===== -->
+  <main id="articles" class="container page">
+    <div class="layout">
+      <!-- Tổng số bài viết: nằm ở cột trái, phía trên khối Danh mục (trên mobile nằm đầu danh sách) -->
+      <div class="result-head">
+        <div>
+          <h2 class="result-title" id="result-title" aria-live="polite">Đang tải bài viết…</h2>
+          <p class="result-update" id="result-update"></p>
+        </div>
+        <button class="btn-filter-open" id="open-filters" type="button">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-filter" />
+          </svg> Danh mục
+          <span class="filter-count" id="filter-count" hidden></span>
+        </button>
+      </div>
+
+      <!-- Sidebar bộ lọc (thành ngăn kéo trên mobile) -->
+      <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+      <aside class="sidebar" id="sidebar" aria-label="Danh mục bài viết">
+        <div class="sidebar-head">
+          <h2>Danh mục</h2>
+          <button class="icon-btn" id="close-filters" type="button" aria-label="Đóng danh sách danh mục">
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-x" />
+            </svg>
+          </button>
+        </div>
+        <div id="filter-groups"></div>
+        <div class="sidebar-foot">
+          <button class="btn-ghost" id="reset-filters" type="button">Bỏ chọn</button>
+          <button class="btn-primary" id="apply-filters" type="button">Xem bài viết</button>
+        </div>
+      </aside>
+
+      <!-- Kết quả -->
+      <section class="results" aria-label="Danh sách bài viết">
+        <div class="toolbar">
+          <div class="sort">
+            <label for="f-sort">Sắp xếp theo:</label>
+            <div class="select-wrap">
+              <select id="f-sort"></select>
+              <svg class="icon icon-sm chev" aria-hidden="true">
+                <use href="#i-chevron" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-list" id="post-list" aria-busy="true">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <div class="state-box" id="state-box" hidden></div>
+
+        <nav class="pagination" id="pagination" aria-label="Phân trang" hidden></nav>
+      </section>
+    </div>
+
+    <!-- Giới thiệu -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">Về Tín Hiệu Lặn</h2>
+      <p>Bản thảo đã tập trung nội dung sáng kiến vào ký hiệu tay, dây, ánh sáng, vỗ vai và bóp tay theo tài liệu đầu
+        vào. Mỗi
+        mục có hình hoặc sơ đồ, mô tả cách thực hiện, nội dung truyền đạt, phản hồi và điểm dễ nhầm. Phần dây giữ một hệ
+        giật-lắc-kéo để đối chiếu; phần ánh sáng ưu tiên các dấu có nguồn và chiếu sáng ký hiệu tay; phần tiếp xúc lựa
+        chọn tập
+        nhỏ và ghi riêng đề xuất vỗ vai.</p> <br />
+      <p>Việc chuẩn hóa không chỉ là đặt tên cho hình ảnh mà còn phải kiểm soát ngữ cảnh và sự khác biệt giữa các hệ.
+        Những nội
+        dung dễ gây hiểu sai đã được hiệu chỉnh: 100 bar không mặc định là nửa bình; sang trái không viết mơ hồ thành
+        giật cộng
+        lắc hai lần; tín hiệu đèn không được gán số nhịp khi chưa có căn cứ; bóp nhanh báo vấn đề hết khí không dùng
+        đồng thời
+        làm xác nhận OK.</p><br />
+      <p>Sáng kiến hiện đạt giai đoạn nghiên cứu tài liệu và xây dựng bộ minh họa. Chưa có cơ sở xác nhận hiệu quả thực
+        tế hoặc
+        công bố bộ ký hiệu như tiêu chuẩn thống nhất đã ban hành. Kiến nghị đơn vị tổ chức thẩm định chuyên môn, khảo
+        sát độc
+        lập và thử nghiệm có kiểm soát; hoàn thiện danh mục, ảnh và thẻ sau khi xử lý các trường hợp nhầm lẫn.</p>
+      <ul class="stats" id="stats"></ul>
+    </section>
+  </main>
+
+  <!-- Màn hình "Khảo sát & Thử nghiệm" (thay chỗ banner + danh sách khi đang xem, không phải popup) -->
+  <section class="survey-view container page" id="survey-view" hidden aria-labelledby="survey-title">
+    <a class="back-link" href="#top">
+      <svg class="icon icon-sm" aria-hidden="true">
+        <use href="#i-chevron" />
+      </svg> Quay lại danh sách bài viết
+    </a>
+    <h1 class="survey-title" id="survey-title"></h1>
+    <div class="survey-body" id="survey-body"></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="logo" href="#top">
+          <span class="logo-mark"><svg class="icon" aria-hidden="true">
+              <use href="#i-wave" />
+            </svg></span>
+          <span class="logo-text">Tín Hiệu <b>Lặn</b></span>
+        </a>
+        <p>Kiến thức lặn biển ngắn gọn, dễ hiểu và đặt an toàn lên hàng đầu.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Liên hệ</h3>
+        <ul>
+          <li>Email: <a href="mailto:tungdk@daihocpccc.edu.vn">tungdk@daihocpccc.edu.vn</a></li>
+          <li>SĐT: <a href="#">0869260300</a></li>
+          <li>Địa chỉ: Hà Nội, Việt Nam</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tài liệu tham khảo</h3>
+        <ul>
+          <li><a href="https://blog.padi.com/night-diving-tips" target="_blank" rel="noopener noreferrer">PADI – Mẹo
+              lặn đêm</a></li>
+          <li><a
+              href="https://www.tdisdi.com/wp-content/uploads/files/sandp/currentYear/ERDI/part%203/pdf/individual/ERDI%20Ops%20Standards_13_Night_Ops.pdf"
+              target="_blank" rel="noopener noreferrer">ERDI – Night Ops Standards</a></li>
+          <li><a href="https://training.divessi.com/index.php?id=74215470" target="_blank" rel="noopener noreferrer">SSI
+              – Touch Communication</a></li>
+          <li><a href="https://pure.etsmtl.ca/en/publications/underwater-optical-wireless-communication/"
+              target="_blank" rel="noopener noreferrer">Kaushal &amp; Kaddoum – Underwater Optical Communication</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© <span id="year">2026</span> Tín Hiệu Lặn. Bảo lưu mọi quyền.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Nút nổi -->
+  <div class="fabs">
+    <button class="fab" id="fab-saved" type="button" aria-pressed="false" aria-label="Xem bài viết đã lưu">
+      <svg class="icon" aria-hidden="true">
+        <use href="#i-heart" />
+      </svg>
+      <span class="fab-badge" id="saved-count">0</span>
+    </button>
+    <button class="fab fab-top" id="fab-top" type="button" aria-label="Lên đầu trang" hidden>
+      <svg class="icon" aria-hidden="true">
+        <use href="#i-arrow-up" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Popup nội dung bài viết -->
+  <dialog class="modal" id="post-modal" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Đóng">
+      <svg class="icon" aria-hidden="true">
+        <use href="#i-x" />
+      </svg>
+    </button>
+    <div class="modal-layout" id="modal-body"></div>
+  </dialog>
+
+  <noscript>
+    <p style="padding:16px;text-align:center">Trang này cần bật JavaScript để hiển thị danh sách bài viết.</p>
+  </noscript>
+</body>
+
+</html>
